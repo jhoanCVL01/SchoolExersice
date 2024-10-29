@@ -73,15 +73,29 @@ Asegúrate de tener instaladas las siguientes herramientas:
    ```bash
    private baseUrl = 'https://localhost:7235/api' (Cambiar por puerto de ejecucion de api)
 
-## 🚀 **Capturas**
+## 📸 **Capturas**
+ - **Estudiantes
+![image](https://github.com/user-attachments/assets/e4f9441d-6c52-4dce-a633-7467a9c46645)
+![image](https://github.com/user-attachments/assets/0d34566e-4de8-4072-987f-cbe8a5441384)
+![image](https://github.com/user-attachments/assets/7fefe127-4569-4227-b0dc-1b36623b3bfa)
+ - **Profesores
+![image](https://github.com/user-attachments/assets/f7cc10e3-0f0b-4ff9-8105-fd8b5d811a43)
+![image](https://github.com/user-attachments/assets/a01fdbfe-34e0-4616-a19b-ced571e136cc)
+![image](https://github.com/user-attachments/assets/21ca2156-fd0d-4c8f-9685-e27d9fc0aae9)
+ - **Notas
+![image](https://github.com/user-attachments/assets/03f97445-c96d-43d6-a710-176639f3a0ff)
+![image](https://github.com/user-attachments/assets/524bc9e8-a5e3-433e-a571-f27b4fbdc402)
+![image](https://github.com/user-attachments/assets/b7e007b3-1ff1-4d07-8f9c-1bda53dad237)
 
-![image](https://github.com/user-attachments/assets/38637fe6-c563-47da-9f84-8cf627446a89)
-
-![image](https://github.com/user-attachments/assets/a7d6feab-6802-4537-b542-89eae3a1b34b)
-
-![image](https://github.com/user-attachments/assets/d0c97318-d394-4d51-855f-133dd50c3767)
-
-![image](https://github.com/user-attachments/assets/495bba73-2487-48d6-97e5-523efc1edc99)
+- **MER
+![image](https://github.com/user-attachments/assets/8effa2c7-1714-48a4-bb01-cfb7ee0a84ed)
 
 
-   
+
+## 🛠️ **Tecnologías Utilizadas**
+
+- **Node.js**: >= 18.x
+- **Angular CLI**: >= 16.x
+- **.NET SDK**: >= 8.0
+- **Git**: Para clonar el repositorio
+- **Visual Studio / Visual Studio Code**: Opcional, pero recomendado para desarrollo.  
