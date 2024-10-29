@@ -1,0 +1,62 @@
+<h1 class="mt-4">Profesores</h1>
+<ol class="breadcrumb mb-4">
+  <li class="breadcrumb-item active">Profesores</li>
+</ol>
+<div class="card mb-4">
+  <div class="card-header">
+    <h2>Lista de Profesores</h2>
+  </div>
+  <div class="card-body">
+    <table id="datatableexample">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let profesor of profesores">
+          <td>{{profesor.id }}</td>
+          <td>{{profesor.nombre }}</td>
+          <td>
+            <button class="btn-icon-delete" (click)="eliminarProfesor(profesor.id)">
+              <i class="fas fa-trash"></i> <!-- Ícono de eliminar -->
+            </button>
+            <button (click)="editarProfesor(profesor)" data-bs-toggle="modal" data-bs-target="#profesorModal">
+              <i class="fas fa-edit"></i> <!-- Ícono de eliminar -->
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+</div>
+
+<div class="modal fade" id="profesorModal" tabindex="-1" aria-labelledby="profesorModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="profesorModalLabel">{{ modalTitle }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label  class="form-label">Nombre</label>
+          <input type="text" [(ngModel)]="nuevoProfesor.nombre" class="form-control"
+          placeholder="Nombre del Profesor">
+      </div>
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="guardarProfesor()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#profesorModal"
+  (click)="nuevoProfesor={id:0,nombre:''};editMode=false">Nuevo</button>

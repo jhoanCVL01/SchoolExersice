@@ -1,0 +1,104 @@
+<h1 class="mt-4">Notas</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Notas</li>
+  </ol>
+<div class="card mb-4">
+  <div class="card-header">
+    <h2>Lista de Notas</h2>
+  </div>
+  <div class="card-body">
+    <table id="datatableNotas" class="display" style="width:100%">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Profesor</th>
+          <th>Estudiante</th>
+          <th>Valor</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let nota of notas">
+          <td>{{ nota.id }}</td>
+          <td>{{ nota.nombre }}</td>
+          <td>{{ nota.profesor.nombre }}</td>
+          <td>{{ nota.estudiante.nombre }}</td>
+          <td>{{ nota.valor }}</td>
+          <td>
+            <button class="btn-icon" (click)="editarNota(nota)" data-bs-toggle="modal" data-bs-target="#notaModal">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-icon-delete" (click)="eliminarNota(nota.id)">
+              <i class="fas fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="notaModal" tabindex="-1" aria-labelledby="notaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="notaModalLabel">{{ modalTitle }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="nombreNota" class="form-label">Nombre de la Nota</label>
+          <input 
+            type="text" 
+            [(ngModel)]="nuevaNota.nombre" 
+            class="form-control" 
+            id="nombreNota" 
+            placeholder="Ingrese el nombre de la nota">
+        </div>
+      
+        <div class="mb-3">
+          <label for="profesorSelect" class="form-label">Profesor</label>
+          <select 
+            class="form-select" 
+            [(ngModel)]="nuevaNota.idProfesor" 
+            id="profesorSelect">
+            <option *ngFor="let profesor of profesores" [value]="profesor.id">
+              {{ profesor.nombre }}
+            </option>
+          </select>
+        </div>
+      
+        <div class="mb-3">
+          <label for="estudianteSelect" class="form-label">Estudiante</label>
+          <select 
+            class="form-select" 
+            [(ngModel)]="nuevaNota.idEstudiante" 
+            id="estudianteSelect">
+            <option *ngFor="let estudiante of estudiantes" [value]="estudiante.id">
+              {{ estudiante.nombre }}
+            </option>
+          </select>
+        </div>
+      
+        <div class="mb-3">
+          <label for="valorNota" class="form-label">Valor de la Nota</label>
+          <input 
+            type="number" 
+            [(ngModel)]="nuevaNota.valor" 
+            class="form-control" 
+            id="valorNota" 
+            placeholder="Ingrese el valor de la nota">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="guardarNota()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#notaModal"
+  (click)="nuevaNota = { id: 0, nombre: '', valor: 0, idProfesor: 0, idEstudiante: 0 }; editMode = false">Nueva Nota</button>
