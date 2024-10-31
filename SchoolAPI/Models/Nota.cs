@@ -2,6 +2,9 @@
 
 namespace SchoolAPI.Models
 {
+    /// <summary>
+    /// Clase que representa una nota en el Sistemas
+    /// </summary>
     public class Nota
     {
         public int Id { get; set; }

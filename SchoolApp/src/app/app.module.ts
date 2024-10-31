@@ -7,20 +7,22 @@ import { EstudiantesComponent } from './estudiantes/estudiantes.component';
 import { ProfesoresComponent } from './profesores/profesores.component';
 import { NotasComponent } from './notas/notas.component';
 import { FormsModule } from '@angular/forms'; // Importar FormsModule
-import { DataTablesModule } from 'angular-datatables';
+import { AgGridModule } from 'ag-grid-angular';
+import { AccionesCellRendererComponent } from './acciones-cell-renderer.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     EstudiantesComponent,
     ProfesoresComponent,
-    NotasComponent
+    NotasComponent,
+    AccionesCellRendererComponent 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule ,
-    DataTablesModule
+    FormsModule,
+    AgGridModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

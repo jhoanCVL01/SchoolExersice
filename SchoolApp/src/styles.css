@@ -12879,3 +12879,7 @@ body {
 .btn-icon-delete i {
   pointer-events: none; /* Asegura que solo el botón reciba clics */
 }
+
+.capitalize {
+  text-transform: capitalize;
+}

@@ -24,21 +24,17 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
+           "styles": [
               "src/styles.css",
-              "node_modules/datatables.net-dt/css/jquery.dataTables.min.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ag-grid-community/styles/ag-grid.css",
+              "node_modules/ag-grid-community/styles/ag-theme-alpine.css"
             ],
             "scripts": [
               "src/assets/js/scripts.js",
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/datatables.net/js/jquery.dataTables.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/jszip/dist/jszip.js",
-              "node_modules/datatables.net-buttons/js/dataTables.buttons.js",
-              "node_modules/datatables.net-buttons/js/buttons.colVis.js",
-              "node_modules/datatables.net-buttons/js/buttons.html5.js",
-              "node_modules/datatables.net-buttons/js/buttons.print.js"
+              "node_modules/jszip/dist/jszip.js"
             ]
           },
           "configurations": {
@@ -100,19 +96,15 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/datatables.net-dt/css/jquery.dataTables.min.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ag-grid-community/styles/ag-grid.css",
+              "node_modules/ag-grid-community/styles/ag-theme-alpine.css"
             ],
             "scripts": [
               "src/assets/js/scripts.js",
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/datatables.net/js/jquery.dataTables.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/jszip/dist/jszip.js",
-              "node_modules/datatables.net-buttons/js/dataTables.buttons.js",
-              "node_modules/datatables.net-buttons/js/buttons.colVis.js",
-              "node_modules/datatables.net-buttons/js/buttons.html5.js",
-              "node_modules/datatables.net-buttons/js/buttons.print.js"
+              "node_modules/jszip/dist/jszip.js"
             ]
           }
         }

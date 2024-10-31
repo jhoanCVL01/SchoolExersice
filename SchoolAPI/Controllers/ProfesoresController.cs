@@ -6,23 +6,37 @@ using SchoolAPI.Models;
 
 namespace SchoolAPI.Controllers
 {
+    /// <summary>
+    /// Controlador para funciones crud de profesores
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ProfesoresController : ControllerBase
     {
         private readonly SchoolContext _context;
-
+        /// <summary>
+        ///  Inicializa una nueva instancia de la clase <see cref="ProfesoresController"/>.
+        /// </summary>
+        /// <param name="context"></param>
         public ProfesoresController(SchoolContext context)
         {
             _context = context;
         }
 
+        /// <summary>
+        /// Consulta la lista de profesores
+        /// </summary>
+        /// <returns>Lista</returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Profesor>>> GetProfesores()
         {
             return await _context.Profesores.ToListAsync();
         }
 
+        /// <summary>
+        /// Consulta un profesor por ID
+        /// </summary>
+        /// <returns>Registro Concreto</returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<Profesor>> GetProfesor(int id)
         {
@@ -36,6 +50,11 @@ namespace SchoolAPI.Controllers
             return profesor;
         }
 
+        /// <summary>
+        /// Crea un profesor
+        /// </summary>
+        /// <param name="profesor"></param>
+        /// <returns>Registro Creado</returns>
         [HttpPost]
         public async Task<ActionResult<Profesor>> PostProfesor(Profesor profesor)
         {
@@ -43,6 +62,13 @@ namespace SchoolAPI.Controllers
             await _context.SaveChangesAsync();
             return CreatedAtAction(nameof(GetProfesores), new { id = profesor.Id }, profesor);
         }
+
+        /// <summary>
+        /// Modifica un profesor
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="profesor"></param>
+        /// <returns>Registro Creado</returns>
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProfesor(int id, Profesor profesor)
         {
@@ -72,6 +98,10 @@ namespace SchoolAPI.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Elimina un profesor
+        /// </summary>
+        /// <param name="id"></param>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProfesor(int id)
         {

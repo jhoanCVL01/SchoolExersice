@@ -6,25 +6,37 @@ using SchoolAPI.Models;
 
 namespace SchoolAPI.Controllers
 {
+    /// <summary>
+    /// Controlador para funciones crud de estudiantes
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class EstudiantesController : ControllerBase
     {
         private readonly SchoolContext _context;
-
+        /// <summary>
+        ///  Inicializa una nueva instancia de la clase <see cref="EstudiantesController"/>.
+        /// </summary>
+        /// <param name="context"></param>
         public EstudiantesController(SchoolContext context)
         {
             _context = context;
         }
 
-        // GET: api/estudiantes
+        /// <summary>
+        /// Consulta la lista de estudiantes
+        /// </summary>
+        /// <returns>Lista</returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Estudiante>>> GetEstudiantes()
         {
             return await _context.Estudiantes.ToListAsync();
         }
 
-        // GET: api/estudiantes/5
+        /// <summary>
+        /// Consulta un estudiante por ID
+        /// </summary>
+        /// <returns>Registro Concreto</returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<Estudiante>> GetEstudiante(int id)
         {
@@ -38,7 +50,11 @@ namespace SchoolAPI.Controllers
             return estudiante;
         }
 
-        // POST: api/estudiantes
+        /// <summary>
+        /// Crea un estudiante
+        /// </summary>
+        /// <param name="estudiante"></param>
+        /// <returns>Registro Creado</returns>
         [HttpPost]
         public async Task<ActionResult<Estudiante>> PostEstudiante(Estudiante estudiante)
         {
@@ -48,7 +64,12 @@ namespace SchoolAPI.Controllers
             return CreatedAtAction(nameof(GetEstudiante), new { id = estudiante.Id }, estudiante);
         }
 
-        // PUT: api/estudiantes/5
+        /// <summary>
+        /// Modifica un estudiante
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="estudiante"></param>
+        /// <returns>Registro Creado</returns>
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEstudiante(int id, Estudiante estudiante)
         {
@@ -78,7 +99,10 @@ namespace SchoolAPI.Controllers
             return NoContent();
         }
 
-        // DELETE: api/estudiantes/5
+        /// <summary>
+        /// Elimina un Estudiante
+        /// </summary>
+        /// <param name="id"></param>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEstudiante(int id)
         {
